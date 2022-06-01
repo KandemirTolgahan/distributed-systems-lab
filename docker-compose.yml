@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-    todoBackend:
+    backend:
         image: backend:1.0
         build:
             context: ./
