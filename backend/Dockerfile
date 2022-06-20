@@ -1,9 +1,6 @@
 FROM node:latest
-
-WORKDIR /usr/src/todoApp
-COPY ../.env .
-COPY ./backend backend/
-WORKDIR /usr/src/todoApp/backend
-RUN npm install -g npm@latest
-
-CMD ["node", "./src/index.js"]
+WORKDIR /app
+COPY backend/package.json /app
+RUN npm install
+COPY backend/src /app
+CMD ["node", "index.js"]
